@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio-template-2026</title>
   </head>
-  <body class="bg-slate-900 flex items-center justify-center h-screen">
-  <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-    Tailwind Configurado con Éxito
-  </h1>
+<body class="bg-slate-950 text-white font-sans selection:bg-emerald-500/30">
+
+  <header class="fixed top-0 w-full p-6 flex justify-between items-center backdrop-blur-md z-50">
+    <div class="text-xl font-black tracking-tighter italic">ALEX<span class="text-emerald-400 not-italic">.DEV</span></div>
+    <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
+      <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+      <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
+      <a href="#contacto" class="text-emerald-400 border border-emerald-400/30 px-4 py-1 rounded-full hover:bg-emerald-400/10 transition-all">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+      <h1 class="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8]">
+        DESIGN <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 italic font-serif">STUDENT</span>
+      </h1>
+      <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+        Estudiante en <span class="text-white font-medium">UDIT</span>. Construyendo interfaces de Grado 3 con excelencia técnica y narrativa visual.
+      </p>
+      
+      <div class="mt-12 animate-bounce opacity-20 text-emerald-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg>
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
