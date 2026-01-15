@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --repo https://github.com/alexxblaro16/portfolio-template-2026.git"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
