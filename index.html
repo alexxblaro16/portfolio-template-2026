@@ -25,18 +25,29 @@
 <body class="bg-slate-950 text-white font-sans selection:bg-emerald-500/30">
 
   <div class="fixed inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#020617_40%,#064e3b_100%)] opacity-70"></div>
+<header class="fixed top-0 w-full p-6 flex justify-between items-center backdrop-blur-md z-50 border-b border-white/5">
+  <a href="#" class="text-xl font-black tracking-tighter italic cursor-pointer">
+    ALEXXBLARO<span class="text-emerald-400 not-italic">.DEV</span>
+  </a>
 
-  <header class="fixed top-0 w-full p-6 flex justify-between items-center backdrop-blur-md z-50 border-b border-white/5">
-    <a href="#" class="text-xl font-black tracking-tighter italic cursor-pointer">
-      ALEXXBLARO<span class="text-emerald-400 not-italic">.DEV</span>
-    </a>
-    <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
-      <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
-      <a href="#experiencia" class="hover:text-white transition-colors">Trayectoria</a>
-      <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
-      <a href="#contacto" class="text-emerald-400 border border-emerald-400/30 px-4 py-1 rounded-full hover:bg-emerald-400/10 transition-all">Contacto</a>
-    </nav>
-  </header>
+  <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
+    <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
+    <a href="#experiencia" class="hover:text-white transition-colors">Trayectoria</a>
+    <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+    <a href="#contacto" class="text-emerald-400 border border-emerald-400/30 px-4 py-1 rounded-full hover:bg-emerald-400/10 transition-all">Contacto</a>
+  </nav>
+
+  <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-white/5 flex flex-col p-6 space-y-4 text-center text-xs uppercase tracking-widest md:hidden">
+    <a href="#sobre-mi" class="py-2 text-gray-400 hover:text-white">Sobre mí</a>
+    <a href="#experiencia" class="py-2 text-gray-400 hover:text-white">Trayectoria</a>
+    <a href="#proyectos" class="py-2 text-gray-400 hover:text-white">Proyectos</a>
+    <a href="#contacto" class="py-2 text-emerald-400 font-bold">Contacto</a>
+  </div>
+</header>
 
   <main>
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
@@ -333,29 +344,22 @@
   const modalImg = document.getElementById('modal-img');
   const counter = document.getElementById('photo-counter');
 
-  // Función para abrir la galería de 10 fotos (CON FLECHAS)
   function openGallery() {
     const navBtns = document.querySelectorAll('.nav-btn');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
-    
-    // Mostramos las flechas
     navBtns.forEach(btn => btn.classList.remove('hidden'));
     updatePhoto();
   }
 
-  // Función para abrir solo la foto de perfil (SIN FLECHAS)
   function openProfileModal() {
     const navBtns = document.querySelectorAll('.nav-btn');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
-
     modalImg.src = "public/perfil.jpg";
     counter.innerText = "ALEJANDRO BLANCO RODRÍGUEZ";
-
-    // Ocultamos las flechas
     navBtns.forEach(btn => btn.classList.add('hidden'));
   }
 
@@ -371,15 +375,32 @@
   }
 
   function nextPhoto() {
-    if (modalImg.src.includes("perfil.jpg")) return; // Bloquear si es la foto de perfil
+    if (modalImg.src.includes("perfil.jpg")) return;
     photoIndex = (photoIndex + 1) % myPhotos.length;
     updatePhoto();
   }
 
   function prevPhoto() {
-    if (modalImg.src.includes("perfil.jpg")) return; // Bloquear si es la foto de perfil
+    if (modalImg.src.includes("perfil.jpg")) return;
     photoIndex = (photoIndex - 1 + myPhotos.length) % myPhotos.length;
     updatePhoto();
+  }
+
+  // --- LÓGICA DEL MENÚ MÓVIL ---
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
   }
 
   // --- EVENTOS ---
@@ -390,7 +411,6 @@
   document.addEventListener('keydown', (e) => {
     if (modal.classList.contains('hidden')) return;
     if (e.key === "Escape") closeGallery();
-    // Solo permitir flechas si no estamos viendo la foto de perfil
     if (!modalImg.src.includes("perfil.jpg")) {
       if (e.key === "ArrowRight") nextPhoto();
       if (e.key === "ArrowLeft") prevPhoto();
