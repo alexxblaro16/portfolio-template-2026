@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Transición suave para las diapositivas de Trayectoria */
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+  display: grid;
+  opacity: 1;
+}
+
+/* Animación del Gradiente para el Hero (Alejandro Blanco) */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 5s ease infinite;
+}
+
+/* Ajuste opcional para mejorar el contraste de las imágenes de fondo */
+.slide img {
+  filter: contrast(1.1) brightness(0.9);
+}

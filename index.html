@@ -1,105 +1,225 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio-template-2026</title>
-    <script type="module" crossorigin src="./assets/index-DMOspnJV.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CbE64MfT.css">
-  </head>
-<body class="bg-slate-950 text-white font-sans">
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Blanco | Portfolio 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animación del Gradiente en el Texto */
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient-move 5s ease infinite;
+    }
 
-  <header class="fixed top-0 w-full p-4 md:p-6 flex flex-col md:flex-row justify-between items-center backdrop-blur-md z-50 gap-2 md:gap-0">
-  <div class="text-lg md:text-xl font-black tracking-tighter italic">
-    ALEX<span class="text-emerald-400 not-italic">.DEV</span>
-  </div>
-  
-  <nav class="flex items-center space-x-3 md:space-x-8 text-[9px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] font-bold text-gray-400">
-    <a href="#proyectos" class="hover:text-white transition-colors py-1">Proyectos</a>
-    <a href="#sobre-mi" class="hover:text-white transition-colors py-1">Sobre mí</a>
-    <a href="#contacto" class="text-emerald-400 border border-emerald-400/30 px-3 py-1 rounded-full hover:bg-emerald-400/10 transition-all">
-      Contacto
-    </a>
-  </nav>
-</header>
+    /* Control de Slides */
+    .slide { display: none; opacity: 0; transition: opacity 0.5s ease-in-out; }
+    .slide.active { display: grid; opacity: 1; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white font-sans selection:bg-emerald-500/30">
+
+  <div class="fixed inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#020617_40%,#064e3b_100%)] opacity-70"></div>
+
+  <header class="fixed top-0 w-full p-6 flex justify-between items-center backdrop-blur-md z-50 border-b border-white/5">
+    <div class="text-xl font-black tracking-tighter italic">ALEX<span class="text-emerald-400 not-italic">.DEV</span></div>
+    <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-400">
+      <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+      <a href="#experiencia" class="hover:text-white transition-colors">Trayectoria</a>
+      <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
+      <a href="#contacto" class="text-emerald-400 border border-emerald-400/30 px-4 py-1 rounded-full hover:bg-emerald-400/10 transition-all">Contacto</a>
+    </nav>
+  </header>
 
   <main>
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
-      <h1 class="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8]">
-        DESIGN <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 italic font-serif">STUDENT</span>
+      <h1 class="text-7xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.9]">
+        ALEJANDRO <br> 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-cyan-300 to-emerald-300 italic font-serif font-light animate-gradient">
+          BLANCO RODRÍGUEZ
+        </span>
       </h1>
-      <p class="max-w-xl text-gray-400 text-lg md:text-xl font-light leading-relaxed">
-        Estudiante en <span class="text-white font-medium">UDIT</span>. Construyendo interfaces de Grado 3 con excelencia técnica y narrativa visual.
-      </p>
+      <div class="max-w-xl">
+        <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+          Estudiante en <span class="text-white font-medium">UDIT</span>. Desarrollo de Software Full Stack.
+        </p>
+        <p class="mt-4 text-[10px] text-gray-500 uppercase tracking-[0.2em]">Asignatura: Front-End I</p>
+      </div>
       
-      <div class="mt-12 animate-bounce opacity-20 text-emerald-400">
+      <div class="mt-16 animate-bounce opacity-20 text-emerald-400">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg>
       </div>
     </section>
-    <section id="proyectos" class="py-20 px-6 max-w-7xl mx-auto">
-  <h2 class="text-4xl font-black mb-12 tracking-tighter">PROYECTOS <span class="text-emerald-400 font-serif italic text-2xl">Seleccionados</span></h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/5 hover:border-emerald-400/50 transition-all duration-500">
-      <div class="aspect-video bg-gradient-to-br from-emerald-500/20 to-slate-800 flex items-center justify-center">
-        <span class="text-slate-500 group-hover:scale-110 transition-transform duration-500 italic font-serif">Portfolio v1</span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2">Diseño de Interfaz</h3>
-        <p class="text-gray-400 text-sm mb-4">Exploración de tipografías y sistemas de diseño para marcas digitales.</p>
-        <div class="flex gap-2">
-          <span class="text-[10px] px-2 py-1 rounded-full bg-white/5 text-emerald-400 border border-emerald-400/20">TAILWIND</span>
-          <span class="text-[10px] px-2 py-1 rounded-full bg-white/5 text-emerald-400 border border-emerald-400/20">GSAP</span>
-        </div>
-      </div>
-    </div>
 
-    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/5 hover:border-emerald-400/50 transition-all duration-500">
-      <div class="aspect-video bg-gradient-to-br from-cyan-500/20 to-slate-800 flex items-center justify-center">
-        <span class="text-slate-500 group-hover:scale-110 transition-transform duration-500 italic font-serif">E-commerce App</span>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-bold mb-2">Desarrollo Frontend</h3>
-        <p class="text-gray-400 text-sm mb-4">Tienda online con enfoque en la experiencia de compra minimalista.</p>
-        <div class="flex gap-2">
-          <span class="text-[10px] px-2 py-1 rounded-full bg-white/5 text-cyan-400 border border-cyan-400/20">VITE</span>
-          <span class="text-[10px] px-2 py-1 rounded-full bg-white/5 text-cyan-400 border border-cyan-400/20">REACT</span>
+    <section id="proyectos" class="py-24 px-6 max-w-7xl mx-auto">
+      <h2 class="text-4xl font-black mb-12 tracking-tighter uppercase">Proyectos <span class="text-emerald-400 font-serif italic text-2xl lowercase font-light">Seleccionados</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-900/50 border border-white/5 hover:border-emerald-400/50 transition-all duration-500">
+          <div class="aspect-video bg-gradient-to-br from-emerald-500/20 to-slate-800 flex items-center justify-center">
+            <span class="text-slate-500 group-hover:scale-110 transition-transform italic font-serif">Portfolio v1</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 uppercase">Diseño de Interfaz</h3>
+            <div class="flex gap-2">
+              <span class="text-[9px] px-2 py-1 rounded-full bg-white/5 text-emerald-400 border border-emerald-400/20">TAILWIND</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+        </div>
+    </section>
 
-  </div>
-</section>
-<section id="sobre-mi" class="py-20 px-6 max-w-4xl mx-auto border-t border-white/5">
-  <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
-    <div class="relative group">
-      <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-      <div class="relative bg-slate-900 rounded-full aspect-square flex items-center justify-center border border-white/10 overflow-hidden">
-        <span class="text-4xl">👨‍💻</span>
-      </div>
-    </div>
+<section id="experiencia" class="py-24 max-w-5xl mx-auto px-6">
+  <div class="flex justify-between items-end mb-8">
     <div>
-      <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
-      <p class="text-gray-400 leading-relaxed mb-6">
-        Estudiante de <span class="text-white">Diseño y Desarrollo de Software en UDIT</span>. Me apasiona la intersección entre la estética visual y la eficiencia del código. Mi objetivo es crear productos digitales que no solo funcionen, sino que cuenten una historia.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <span class="bg-emerald-400/10 text-emerald-400 text-[10px] font-bold px-3 py-1 rounded-md border border-emerald-400/20">CREATIVIDAD</span>
-        <span class="bg-cyan-400/10 text-cyan-400 text-[10px] font-bold px-3 py-1 rounded-md border border-cyan-400/20">LOGICA</span>
-        <span class="bg-purple-400/10 text-purple-400 text-[10px] font-bold px-3 py-1 rounded-md border border-purple-400/20">ESTRATEGIA</span>
-      </div>
+      <h2 class="text-4xl font-black tracking-tighter uppercase italic">Trayectoria</h2>
+      <p class="text-emerald-400 font-serif italic text-lg">Experiencia profesional</p>
+    </div>
+    <div class="flex gap-3">
+      <button type="button" onclick="changeSlide(-1)" class="w-12 h-12 border border-white/10 rounded-full hover:bg-emerald-400 hover:text-black transition-all flex items-center justify-center text-xl z-30">←</button>
+      <button type="button" onclick="changeSlide(1)" class="w-12 h-12 border border-white/10 rounded-full hover:bg-emerald-400 hover:text-black transition-all flex items-center justify-center text-xl z-30">→</button>
     </div>
   </div>
+
+  <div class="relative h-[550px] md:h-[450px] bg-slate-900/50 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+    
+    <article class="slide active grid md:grid-cols-2 h-full w-full absolute inset-0 transition-opacity duration-500">
+      <div class="relative h-full overflow-hidden">
+        <img src="/anexia.jpg" class="w-full h-full object-cover opacity-60 contrast-125">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-slate-900"></div>
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center items-start bg-slate-900">
+        <span class="text-emerald-400 text-[10px] font-mono tracking-[0.3em] uppercase mb-3 px-2 py-1 bg-emerald-400/10 rounded font-bold">Marzo 2025 – Junio 2025</span>
+        <h3 class="text-3xl font-black uppercase mb-3 leading-none tracking-tighter">Anexia<br>Tecnologías</h3>
+        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic border-l-2 border-emerald-400/30 pl-4">
+          Desarrollador Trainee especializado en <strong class="text-white">Astro (v5)</strong>. Gestión de proyectos mediante <strong class="text-white">Git</strong> y flujos de trabajo profesionales en entornos tecnológicos.
+        </p>
+      </div>
+    </article>
+
+    <article class="slide grid md:grid-cols-2 h-full w-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+      <div class="relative h-full overflow-hidden">
+        <img src="/lupa.jpg" class="w-full h-full object-cover opacity-60 contrast-125">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-slate-900"></div>
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center items-start bg-slate-900">
+        <span class="text-cyan-400 text-[10px] font-mono tracking-[0.3em] uppercase mb-3 px-2 py-1 bg-cyan-400/10 rounded font-bold">Junio 2025- Septiembre 2025</span>
+        <h3 class="text-3xl font-black uppercase mb-3 leading-none tracking-tighter">Supermercados<br>Lupa</h3>
+        <p class="text-gray-300 text-[11px] md:text-xs leading-relaxed italic border-l-2 border-cyan-400/30 pl-4">
+          Personal polivalente: <strong class="text-white">gestión de caja, logística y secciones de frescos</strong> (carnicería/pescadería). Responsable de stock y mantenimiento integral de higiene.
+        </p>
+      </div>
+    </article>
+
+    <article class="slide grid md:grid-cols-2 h-full w-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+      <div class="relative h-full overflow-hidden">
+        <img src="/reblan.jpg" class="w-full h-full object-cover opacity-60 contrast-125">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-slate-900"></div>
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center items-start bg-slate-900">
+        <span class="text-amber-400 text-[10px] font-mono tracking-[0.3em] uppercase mb-3 px-2 py-1 bg-amber-400/10 rounded font-bold">Temporadas Verano (2021 – 2024)</span>
+        <h3 class="text-3xl font-black uppercase mb-3 leading-none tracking-tighter">Reblán<br>Electrodomésticos</h3>
+        <p class="text-gray-300 text-[11px] md:text-xs leading-relaxed italic border-l-2 border-amber-400/30 pl-4 mb-2">
+          Optimización del <strong class="text-white">sistema de facturación</strong> mediante herramientas avanzadas de Excel, mejorando la manejabilidad y eficiencia operativa de la empresa.
+        </p>
+        <p class="text-gray-300 text-[11px] md:text-xs leading-relaxed italic border-l-2 border-amber-400/30 pl-4">
+          Desarrollo de estrategias de <strong class="text-white">marketing online</strong> y soporte técnico comercial directo al público.
+        </p>
+      </div>
+    </article>
+
+    <article class="slide grid md:grid-cols-2 h-full w-full absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none">
+      <div class="relative h-full overflow-hidden">
+        <img src="/metropolitano.jpg" class="w-full h-full object-cover opacity-60 contrast-125">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-slate-900"></div>
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center items-start bg-slate-900">
+        <span class="text-purple-400 text-[10px] font-mono tracking-[0.3em] uppercase mb-3 px-2 py-1 bg-purple-400/10 rounded font-bold">Septiembre 2024 – Mayo 2025</span>
+        <h3 class="text-3xl font-black uppercase mb-3 leading-none tracking-tighter">Estadio Riyadh Air<br>Metropolitano</h3>
+        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic border-l-2 border-purple-400/30 pl-4">
+          Auxiliar de servicios y atención al público. Control de accesos y gestión de flujos de asistentes en eventos de gran escala.
+        </p>
+      </div>
+    </article>
+
+  </div>
 </section>
-<section id="contacto" class="py-20 px-6 text-center max-w-2xl mx-auto">
-  <h2 class="text-5xl font-black mb-6 tracking-tighter">¿Hablamos?</h2>
-  <p class="text-gray-400 mb-10">Si tienes un proyecto en mente o simplemente quieres saludar, mi bandeja de entrada está abierta.</p>
-  <a href="mailto:tu-correo@udit.es" class="inline-block bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-emerald-400 transition-colors duration-300">
-    Enviar mensaje
-  </a>
-</section>
+    <section id="sobre-mi" class="py-24 px-6 max-w-4xl mx-auto border-t border-white/5">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
+        <div class="relative group mx-auto md:mx-0 w-48">
+          <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full blur opacity-25"></div>
+          <div class="relative bg-slate-900 rounded-full aspect-square flex items-center justify-center border border-white/10 text-6xl">👨‍💻</div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-4 uppercase">Sobre mí</h2>
+          <p class="text-gray-400 leading-relaxed font-light mb-6">
+            Estudiante de <span class="text-white">UDIT</span>. Me apasiona la estética visual y la eficiencia del código.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-32 px-6 text-center">
+      <h2 class="text-4xl font-black mb-8 uppercase opacity-30">Get in touch</h2>
+      <a href="mailto:alexxblaro@gmail.com" class="text-2xl md:text-5xl font-serif italic text-emerald-400 hover:text-cyan-300 transition-all">
+        alexxblaro@gmail.com
+      </a>
+    </section>
   </main>
+
+  <footer class="p-12 text-center text-[10px] text-gray-600 tracking-widest border-t border-white/5 uppercase">
+    © 2026 Alejandro Blanco · UDIT
+  </footer>
+<script>
+  let currentIndex = 0;
+  let autoPlayInterval;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.style.display = 'grid';
+        // Pequeño delay para asegurar que el display: grid se aplique antes de la opacidad
+        setTimeout(() => {
+          slide.classList.add('active');
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+        }, 10);
+      } else {
+        slide.classList.remove('active');
+        slide.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          if (!slide.classList.contains('active')) slide.style.display = 'none';
+        }, 500);
+      }
+    });
+  }
+
+  function changeSlide(n) {
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    showSlide(currentIndex);
+    resetAutoPlay(); // Reiniciar el tiempo si el usuario hace clic
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      changeSlide(1);
+    }, 5000); // 5000ms = 5 segundos
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+  }
+
+  // Inicializar al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    showSlide(0);
+    startAutoPlay();
+  });
+</script>
 </body>
 </html>
